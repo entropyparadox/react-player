@@ -36,7 +36,7 @@ export default class Preview extends Component {
       return
     }
     this.setState({ image: null })
-    return window.fetch(`https://noembed.com/embed?url=${url}`)
+    return window.fetch(`https://vimeo.com/api/oembed.json?url=${url}`)
       .then(response => response.json())
       .then(data => {
         if (data.thumbnail_url && this.mounted) {
